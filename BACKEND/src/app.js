@@ -1,7 +1,8 @@
 // server create
 
 const express = require('express')
-const createURLRoute = require('./routes/createURL.route')
+const urlRoute = require('./routes/url.route')
+const redirectURLRoute = require('./routes/redirectURL.route')
 
 const app = express();
 app.use(express.json());
@@ -11,7 +12,8 @@ app.get("/", (req, res) => {
     res.send("Default Route");
 });
 
-app.use('/api', createURLRoute)
+app.use('/api', urlRoute)
+app.use('/', redirectURLRoute)
 
 app.listen(process.env.PORT, () => {
     console.log('Server started');
