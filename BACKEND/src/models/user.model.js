@@ -23,5 +23,11 @@ const userSchema = new mongoose.Schema({
 }
 )
 
+userSchema.virtual("urls", {
+    ref: "shortURL",
+    localField: "_id",
+    foreignField: "userId",
+});
+
 const userModel = mongoose.model('user', userSchema)
 module.exports = userModel

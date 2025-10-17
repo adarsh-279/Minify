@@ -33,6 +33,8 @@ async function redirectShortURL(req, res) {
     const redirectURL = await shortURL.findOne({ shortURL: req.params.id })
     
     if (redirectURL) {
+        redirectURL.clicks = (redirectURL.clicks || 0) + 1;
+        await redirectURL.save();
         res.redirect(redirectURL.fullURL)
     } else {
         res.status(404).json({ message: 'URL not found' })

@@ -5,6 +5,7 @@ const cookieParser = require("cookie-parser");
 const urlRoute = require('./routes/url.route')
 const redirectURLRoute = require('./routes/redirectURL.route')
 const authRoute = require('./routes/auth.route')
+const userProfileRoute = require('./routes/userProfile.route')
 
 const app = express();
 app.use(express.json());
@@ -16,8 +17,9 @@ app.get("/", (req, res) => {
 });
 
 app.use('/api', urlRoute)
-app.use('/', redirectURLRoute)
 app.use('/auth', authRoute)
+app.use('/profile', userProfileRoute)
+app.use("/", redirectURLRoute);
 
 app.listen(process.env.PORT, () => {
     console.log('Server started');
