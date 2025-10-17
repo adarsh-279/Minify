@@ -24,7 +24,8 @@ async function createShortURL(req, res) {
 
     const newURL = await shortURL.create({
         fullURL: url,
-        shortURL: nid
+        shortURL: nid,
+        userId: req.user ? req.user._id : null
     })
 }
 

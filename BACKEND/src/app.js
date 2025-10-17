@@ -1,13 +1,15 @@
 // server create
 
 const express = require('express')
+const cookieParser = require("cookie-parser");
 const urlRoute = require('./routes/url.route')
 const redirectURLRoute = require('./routes/redirectURL.route')
 const authRoute = require('./routes/auth.route')
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true}))
+app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser());
 
 app.get("/", (req, res) => {
     res.send("Default Route");
