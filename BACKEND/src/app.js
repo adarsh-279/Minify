@@ -3,6 +3,7 @@
 const express = require('express')
 const urlRoute = require('./routes/url.route')
 const redirectURLRoute = require('./routes/redirectURL.route')
+const authRoute = require('./routes/auth.route')
 
 const app = express();
 app.use(express.json());
@@ -14,6 +15,7 @@ app.get("/", (req, res) => {
 
 app.use('/api', urlRoute)
 app.use('/', redirectURLRoute)
+app.use('/auth', authRoute)
 
 app.listen(process.env.PORT, () => {
     console.log('Server started');
