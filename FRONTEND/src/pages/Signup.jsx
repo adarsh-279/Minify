@@ -28,11 +28,9 @@ const Signup = () => {
         try {
             setLoading(true)
             const response = await axios.post(import.meta.env.VITE_SIGNUP_API, formData, { withCredentials: true })
-            console.log(response.data)
             alert('✅ Signup successful!')
             navigate('/login')
         } catch (error) {
-            console.log('Signup failed:', error)
             alert('❌ Something went wrong. Please try again.')
         } finally {
             setLoading(false)
