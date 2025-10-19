@@ -25,7 +25,7 @@ const UrlShortForm = () => {
 
         try {
             setLoading(true)
-            const response = await axios.post(import.meta.env.VITE_SHORTURL_CREATE_API, { url: formData.fullURL })
+            const response = await axios.post(import.meta.env.VITE_SHORTURL_CREATE_API, { url: formData.fullURL }, { withCredentials: true })
             setformData(prev => ({ ...prev, shortURL: response.data.shortURL }))
         } catch (error) {
             console.log('Something went wrong while shortening the url');
