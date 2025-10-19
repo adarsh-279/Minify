@@ -27,6 +27,13 @@ async function createShortURL(req, res) {
         shortURL: nid,
         userId: req.user ? req.user._id : null
     })
+
+    const fullShortURL = `${req.protocol}://${req.get("host")}/${nid}`;
+
+    res.status(201).json({
+        shortURL: fullShortURL,
+        fullURL: newURL.fullURL,
+    });
 }
 
 async function redirectShortURL(req, res) {
