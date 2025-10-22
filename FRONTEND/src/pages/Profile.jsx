@@ -89,13 +89,13 @@ const Profile = () => {
                         return (
                             <div key={url._id} className='bg-white p-4 rounded-2xl shadow-md flex flex-col gap-2'>
                                 <p>
-                                    <strong>Full URL:</strong> 
+                                    <strong>Full URL: </strong> 
                                     <a href={url.fullURL} target="_blank" rel="noopener noreferrer" className='text-blue-600'>
                                         {url.fullURL}
                                     </a>
                                 </p>
                                 <p>
-                                    <strong>Short URL:</strong> 
+                                    <strong>Short URL: </strong> 
                                     <a href={fullShortURL} target="_blank" rel="noopener noreferrer" className='text-blue-600'>
                                         {fullShortURL}
                                     </a>

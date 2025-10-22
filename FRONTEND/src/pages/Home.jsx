@@ -42,7 +42,7 @@ const Home = () => {
                     {isLoggedIn ? (
                         <>
                             <button onClick={handleProfile} className='w-20 h-10 border-1 border-gray-400 rounded-lg bg-[#FEFAF1] hover:bg-[#C7AB97] hover:border-none transition-all transform hover:scale-90'>Profile</button>
-                            <button onClick={handleLogout} className='w-20 h-10 rounded-lg bg-[#C7AB97] text-white transition-all transform hover:scale-90'>Logout</button>
+                            <button onClick={handleLogout} className='w-20 h-10 rounded-lg bg-[#c00202] text-white transition-all transform hover:scale-90'>Logout</button>
                         </>
                     ) : (
                         <>

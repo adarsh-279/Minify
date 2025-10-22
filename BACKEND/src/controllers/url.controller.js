@@ -48,7 +48,26 @@ async function redirectShortURL(req, res) {
     }
 }
 
+async function deleteShortURL(req, res) {
+    try {
+        const { id } = req.params
+        const user = req.user
+
+        if (!user) {
+            return res.status(401).json({ message: 'Unauthorized access. Login first' })
+        }
+
+        const url = await shortURL.findOne({ _id: id })
+        await shortURL.deleteOne({ _id: id });
+        
+        return res.status(200).json({ message: 'URL deleted sucessfully'})
+    } catch (error) {
+        return res.status(500).json({ message: 'Server error' })
+    }
+}
+
 module.exports = {
     createShortURL,
     redirectShortURL,
+    deleteShortURL,
 }
