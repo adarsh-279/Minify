@@ -28,6 +28,8 @@ app.use('/auth', authRoute)
 app.use('/profile', userProfileRoute)
 app.use("/", redirectURLRoute);
 
-app.listen(process.env.PORT, () => {
-    console.log('Server started');
-})
+// app.listen(process.env.PORT, () => {
+//     console.log('Server started');
+// })
+
+module.exports = app;
