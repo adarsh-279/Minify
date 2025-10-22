@@ -43,22 +43,25 @@ const UrlShortForm = () => {
 
     return (
         <>
-            <div className='h-full w-full flex items-center justify-between gap-40 pl-35'>
-                <div className='w-110 h-110 bg-white rounded-3xl border-3 border-t-0 border-[#00000080] p-10 flex flex-col gap-10'>
+            <div className='h-full w-full flex flex-col md:flex-row items-center justify-between mt-20 -ml-3 md:mt-40 md:-ml-20 xl:mt-0 xl:-ml-0 md:gap-20 xl:gap-40 md:pl-35'>
+                <div className='lg:hidden'>
+                    <img className='h-150 w-150 -mt-50' src="/home.png" alt="" />
+                </div>
+                <div className='w-95 lg:w-110 h-95 lg:h-110 bg-white rounded-3xl border-3 border-t-0 border-[#00000080] p-10 flex flex-col gap-10 -mt-25 lg:-mt-0'>
                     <div>
                         <form onSubmit={handleSubmit}>
                             <h1 className='text-2xl font-regular mb-4 text-center'>🔗 Enter your Long URL</h1>
                             <input className="w-full px-4 py-4 rounded-xl outline-none bg-white border" type="text" name="fullURL" id="" value={formData.fullURL} onChange={handleChange}/>
-                            <h1 className='text-2xl font-regular mt-10 mb-4 text-center'>Copy your Short URL ⬇️</h1>
+                            <h1 className='text-2xl font-regular mt-5 lg:mt-10 mb-4 text-center'>Copy your Short URL ⬇️</h1>
                             <div className='relative'>
                                 <input className="w-full px-4 py-4 rounded-xl outline-none bg-white border" type="text" name="shortURL" id="" readOnly placeholder='Your short url will appear here...' value={formData.shortURL} />
                                 <span className="absolute mt-3 text-2xl cursor-pointer hover:scale-110 transition-transform" title="Copy short URL" onClick={handleCopy}>📋</span>
                             </div>
-                            <button disabled={loading} className='px-6 py-4 bg-[#C7AB97] text-xl font-regular rounded-2xl mx-27 my-10 transition-all transform hover:scale-90 disabled:opacity-60 disabled:cursor-not-allowed' type="submit">Generate</button>
+                            <button disabled={loading} className='px-6 py-4 bg-[#C7AB97] text-xl font-regular rounded-2xl mx-20 lg:mx-27 my-6 lg:my-10 transition-all transform hover:scale-90 disabled:opacity-60 disabled:cursor-not-allowed' type="submit">Generate</button>
                         </form>
                     </div>
                 </div>
-                <div className=''>
+                <div className='hidden lg:block'>
                     <img className='h-150 w-150 -mt-5' src="/home.png" alt="" />
                 </div>
             </div>

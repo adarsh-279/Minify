@@ -40,7 +40,7 @@ const Signup = () => {
     return (
         <div className="w-full min-h-screen relative bg-[#FEFAF1] flex flex-col items-center p-6 overflow-hidden">
             <div className='w-full absolute bottom-0 left-0'>
-                <img className='w-full' src="/wave.png" alt="wave" />
+                <img className='w-full h-145 md:h-200 xl:h-145' src="/wave.png" alt="wave" />
             </div>
 
             <div className="flex justify-between w-full z-20 mb-16 items-center">
@@ -51,10 +51,14 @@ const Signup = () => {
                 </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-16 z-20 w-full max-w-6xl">
+            <div className='w-full md:w-1/3 flex justify-center -mt-20 md:-mt-0 md:hidden z-10'>
+                <img className='h-100 md:h-130' src="/login.png" alt="signup illustration" />
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-16 z-20 w-full max-w-6xl md:mt-30 xl:mt-0">
                 <div className="w-full md:w-2/5 bg-white rounded-3xl border-3 border-t-0 border-[#00000080] p-10 flex flex-col gap-8 shadow-lg">
                     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                        <h1 className='text-2xl font-medium text-center'>Signup</h1>
+                        <h1 className='text-2xl font-medium text-center'>Create a New Account</h1>
 
                         <input
                             className="w-full px-4 py-3 rounded-xl outline-none bg-white border border-gray-300"
@@ -96,8 +100,8 @@ const Signup = () => {
                     </form>
                 </div>
 
-                <div className='w-full md:w-1/3 flex justify-center'>
-                    <img className='h-100 md:h-72' src="/login.png" alt="signup illustration" />
+                <div className='w-full md:w-1/3 justify-center -mt-20 md:-mt-0 hidden lg:block'>
+                    <img className='h-100 md:h-130' src="/login.png" alt="signup illustration" />
                 </div>
             </div>
         </div>

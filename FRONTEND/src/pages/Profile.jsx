@@ -50,8 +50,8 @@ const Profile = () => {
 
     return (
         <div className="w-full min-h-screen relative bg-[#FEFAF1] overflow-hidden p-6">
-            <div className='w-full absolute bottom-0 left-0'>
-                <img className='w-full' src="/wave.png" alt="wave" />
+            <div className='w-full bottom-0 left-0 fixed'>
+                <img className='w-full h-150' src="/wave.png" alt="wave" />
             </div>
 
             <div className='flex items-center justify-between z-20 relative mb-6'>
@@ -77,7 +77,7 @@ const Profile = () => {
                 <p className='text-lg text-center mt-2'>Your Recent Minify URLs</p>
             </div>
 
-            <div className='z-20 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            <div className='z-20 relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
                 {urls.length === 0 ? (
                     <p>No URLs found</p>
                 ) : (
