@@ -23,6 +23,8 @@ app.get("/", (req, res) => {
     res.send("Default Route");
 });
 
+app.get("/favicon.ico", (req, res) => res.status(204).end());
+
 app.use('/api', urlRoute)
 app.use('/auth', authRoute)
 app.use('/profile', userProfileRoute)
