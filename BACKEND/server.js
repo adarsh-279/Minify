@@ -1,22 +1,18 @@
 require("dotenv").config();
-const serverless = require("serverless-http");
-const connectDB = require("./src/db/db");
 const app = require("./src/app");
+const connectDB = require("./src/db/db");
 
-// Connect DB once when module loads
-connectDB().catch((err) =>
-    console.error("❌ Initial DB connection failed:", err)
-);
+// Connect to MongoDB, then start server
+connectDB()
+    .then(() => {
+        console.log("✅ MongoDB connected successfully");
 
-// Create serverless handler once
-const handler = serverless(app);
-
-// Local development
-if (process.env.NODE_ENV !== "production") {
-    const PORT = process.env.PORT || 3000;
+    const PORT = process.env.PORT || 8000;
     app.listen(PORT, () => {
-        console.log(`🚀 Server running locally on http://localhost:${PORT}`);
+            console.log(`🚀 Server running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+    console.error("❌ Failed to connect to MongoDB:", err);
+    process.exit(1); // Exit with failure
     });
-}
-
-module.exports = handler;

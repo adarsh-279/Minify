@@ -18,7 +18,6 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.19.1",
-    "nanoid": "^3.3.11",
-    "serverless-http": "^4.0.0"
+    "nanoid": "^3.3.11"
   }
 }
